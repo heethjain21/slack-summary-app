@@ -1,0 +1,75 @@
+{
+  "env": {
+    "browser": false,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "eslint:recommended",
+    "plugin:import/recommended",
+    "plugin:security/recommended-legacy"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "unused-imports"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "arrow-body-style": "warn",
+    "consistent-return": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-default-export": "error",
+    "import/no-absolute-path": "off",
+    "max-len": [
+      "warn",
+      {
+        "code": 160,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "no-undef": "warn",
+    "no-unused-expressions": "error",
+    "no-unused-vars": "error",
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "all"
+      }
+    ],
+    "radix": "off",
+    "react/jsx-filename-extension": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": false
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "import/no-cycle": "off",
+    "no-use-before-define": "off",
+    "no-await-in-loop": "off",
+    "import/extensions": "off",
+    "camelcase": "off",
+    "import/prefer-default-export": "off"
+  }
+}

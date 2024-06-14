@@ -1,0 +1,61 @@
+{
+    "display_information": {
+        "name": "Bolt"
+    },
+    "features": {
+        "app_home": {
+            "home_tab_enabled": true,
+            "messages_tab_enabled": true,
+            "messages_tab_read_only_enabled": false
+        },
+        "bot_user": {
+            "display_name": "Bolt",
+            "always_online": true
+        },
+        "shortcuts": [
+            {
+                "name": "Run sample shortcut",
+                "type": "global",
+                "callback_id": "sample_shortcut_id",
+                "description": "Runs a sample shortcut"
+            }
+        ],
+        "slash_commands": [
+            {
+                "command": "/summaries",
+                "description": "Runs summaries related commands",
+                "usage_hint": "/summaries subscribe brief daily 9",
+                "should_escape": false
+            }
+        ]
+    },
+    "oauth_config": {
+        "scopes": {
+            "bot": [
+                "channels:history",
+                "chat:write",
+                "commands",
+                "im:history",
+                "incoming-webhook",
+                "users:read"
+            ]
+        }
+    },
+    "settings": {
+        "event_subscriptions": {
+            "bot_events": [
+                "app_home_opened",
+                "message.channels",
+                "message.im"
+            ]
+        },
+        "interactivity": {
+            "is_enabled": true,
+            "request_url": "https://9f55-45-118-107-187.ngrok-free.app/slack/interactive-endpoint",
+            "message_menu_options_url": "https://9f55-45-118-107-187.ngrok-free.app/slack/options-load-endpoint"
+        },
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": true,
+        "token_rotation_enabled": false
+    }
+}

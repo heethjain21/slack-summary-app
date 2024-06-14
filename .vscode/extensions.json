@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "aaron-bond.better-comments",
+    "streetsidesoftware.code-spell-checker",
+    "yzhang.markdown-all-in-one",
+    "DavidAnson.vscode-markdownlint",
+    "prisma.prisma"
+  ]
+}
