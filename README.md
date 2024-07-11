@@ -23,14 +23,14 @@
 
 ## 3. Database Schema
 
-
 ![schema](https://github.com/heethjain21/slack-summary-app/assets/143497789/8265ecd5-03de-4c5f-adea-664e43e10825)
 
 ## 4. Scope
 
 Basic features for the app:
-- The user can subscribe/unsubscribe from #general and #random (currently there is unsubscribe all, and not individual)
-- The user can choose the time for the daily summary (in their time zone only)
+- The user can subscribe/unsubscribe from any channel which the Bot has access to (currently there is unsubscribe all for each channel, and not individual)
+- The user can choose the time for the summary (in their time zone only). 
+- Currently the summary_time is global i.e one summary time for per user and it will be same for all the types of summaries/channels.
 - Only consider text input for now
 - Summarize by priority of the messages (for now this is just a prompt)
 - Give user the ability to customize/configure summary

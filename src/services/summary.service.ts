@@ -11,7 +11,8 @@ export namespace SummaryService {
 
   export async function generateSummary(
     messages: CommonTypes.SlackChannelMessages[],
-    summary: Summary
+    summary: Summary,
+    channel: CommonTypes.SlackChannelInfo
   ): Promise<string | undefined> {
     try {
       const formattedMessages = messages
@@ -23,7 +24,7 @@ export namespace SummaryService {
         messages: [
           {
             role: 'system',
-            content: `Summarize the following conversation in ${summary.type}. Format using markdown with bullets and also format using priority, so its easier to read. Each message is separated by 'END_OF_A_MESSAGE'`,
+            content: `Summarize the following conversation in ${summary.type}. On the top of the message, also mention the Channel Name like this: "Channel Name: ${channel.name}". Format with bullets (DO NOT USE MARKDOWN) and also format using priority, so its easier to read. Each message is separated by 'END_OF_A_MESSAGE'`,
           },
           { role: 'user', content: formattedMessages },
         ],
@@ -50,9 +51,10 @@ export namespace SummaryService {
   export async function sendSummary(user: User, summary: Summary, from: number, to: number) {
     try {
       const messages = await SlackService.fetchMessages(summary.channel_id, from, to);
+      const channel = await SlackService.getChannelDetails(summary.channel_id);
       if (messages.length === 0) return;
 
-      const summaryMessage = await generateSummary(messages, summary);
+      const summaryMessage = await generateSummary(messages, summary, channel);
       if (!summaryMessage) {
         logger.warn(`summary generation failed for user ${user.id} summary ${summary.id}`);
         return;
