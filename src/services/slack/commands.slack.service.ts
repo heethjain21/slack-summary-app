@@ -88,7 +88,9 @@ export namespace SlackCommandsService {
     // Ensure the user exists or create them
     const user = await prisma.user.upsert({
       where: { slack_id_org_id: { slack_id: user_id, org_id: org.id } },
-      update: {},
+      update: {
+        summary_time: parseInt(summaryTime),
+      },
       create: {
         slack_id: user_id,
         org_id: org.id,
