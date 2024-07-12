@@ -57,8 +57,7 @@ model Summary {
   createdAt  DateTime    @default(now()) @map("created_at")
   updatedAt  DateTime    @default(now()) @updatedAt @map("updated_at")
 
-  @@unique([org_id, user_id, channel_id, frequency])
-  @@unique([org_id, user_id, channel_id, type])
+  @@unique([org_id, user_id, channel_id, frequency, type])
   @@map("summaries")
 }
 

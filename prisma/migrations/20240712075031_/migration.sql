@@ -59,10 +59,7 @@ CREATE UNIQUE INDEX "org_slack_id_key" ON "org"("slack_id");
 CREATE UNIQUE INDEX "users_slack_id_org_id_key" ON "users"("slack_id", "org_id");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "summaries_org_id_user_id_channel_id_frequency_key" ON "summaries"("org_id", "user_id", "channel_id", "frequency");
-
--- CreateIndex
-CREATE UNIQUE INDEX "summaries_org_id_user_id_channel_id_type_key" ON "summaries"("org_id", "user_id", "channel_id", "type");
+CREATE UNIQUE INDEX "summaries_org_id_user_id_channel_id_frequency_type_key" ON "summaries"("org_id", "user_id", "channel_id", "frequency", "type");
 
 -- AddForeignKey
 ALTER TABLE "users" ADD CONSTRAINT "users_org_id_fkey" FOREIGN KEY ("org_id") REFERENCES "org"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

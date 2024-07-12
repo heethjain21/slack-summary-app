@@ -48,6 +48,15 @@ export namespace SlackService {
     }
   }
 
+  export async function getChannelDetails(
+    channelId: string
+  ): Promise<CommonTypes.SlackChannelInfo> {
+    const channelDetails = await app.client.conversations.info({
+      channel: channelId,
+    });
+    return channelDetails.channel;
+  }
+
   export async function fetchMessages(
     channelId: string,
     from: number,
