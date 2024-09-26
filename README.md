@@ -22,7 +22,7 @@
 
 ## 2. System Architecture + Flowchart
 
-- This is an ideal architecture/flow we should have once we go live
+- This is an ideal architecture/flow we should have once we go live for the first version (v1)
 
 ![system](https://github.com/heethjain21/slack-summary-app/assets/143497789/e52a219d-7120-4d4e-8861-65de0ef731b9)
 
