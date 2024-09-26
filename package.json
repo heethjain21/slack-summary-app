@@ -18,7 +18,7 @@
   "author": "Heeth Jain",
   "license": "MIT",
   "dependencies": {
-    "@prisma/client": "^5.14.0",
+    "@prisma/client": "^5.19.0",
     "@slack/bolt": "^3.19.0",
     "@types/node": "^20.14.10",
     "axios": "^1.6.8",
